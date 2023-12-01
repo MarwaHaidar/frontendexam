@@ -17,11 +17,12 @@ let txtitem=document.getElementById("txtitem")
     // Add specific items:
 
     btnaddspecific.addEventListener("click",function(){
-        noduplication()
+        
         if(txtitem.value=="" || (!rdfruits.checked && !rdlegumes.checked)){
             alert("Please enter details")
         }
         else{
+            noduplication()
             if(rdfruits.checked){
                 content="Fruits!-"+txtitem.value;
                 data=`<div class="alert alert-info" name="fruits">${content}</div>`
@@ -45,11 +46,12 @@ let txtitem=document.getElementById("txtitem")
 
     // Add general items:
     btnaddgeneral.addEventListener("click",function(){
-        noduplication()
+        
         if(txtitem.value=="" || (!rdfruits.checked && !rdlegumes.checked)){
             alert("Please enter details")
         }
         else{
+            noduplication()
             if(rdfruits.checked){
                 content="Fruits!-"+txtitem.value;
                 data=`<div class="alert alert-primary" name="fruits" onclick="movealert(this)">${content}</div>`
@@ -63,6 +65,7 @@ let txtitem=document.getElementById("txtitem")
                 
             }
         }
+        
         rdfruits.checked=false;
         rdlegumes.checked=false;
         txtitem.value="";
@@ -190,7 +193,10 @@ function noduplication() {
             if (innerDivs[j].textContent.toLowerCase().includes(item)) {
                 confirmmsg = confirm("The item exists");
                 if (confirmmsg) {
-                    txtitem.value = "";
+                    txtitem.value = ""
+                    innerDivs.style.display='none';
+                    rdfruits.checked=false;
+                    rdlegumes.checked=false;
                     return; // Prevent further execution if duplicate found
                 }
             }
