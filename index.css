@@ -1,0 +1,27 @@
+.searchitem,.txtitem{
+    transition: All .3s ease;
+    box-shadow:3px 3px 10px rgb(128, 128, 128);
+    text-align: center;
+   }
+   .searchitem:hover,.txtitem:hover{
+    
+    transform: scale(1.02);
+   }
+   button{
+    transition: all .3 ease-in-out;
+   }
+   button:hover{
+    transform: scale(1.1);
+   }
+   .firstpart,.secondpart{
+    transition: all .3 ease;
+   }
+   .firstpart:hover,.secondpart:hover{
+    transform: scale(1.05);
+   }
+   .maindiv{
+    transition: all .3 ease;
+   }
+   .maindiv:hover{
+    transform: scale(1.02);
+   }
